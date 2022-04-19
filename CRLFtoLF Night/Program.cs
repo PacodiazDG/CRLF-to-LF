@@ -25,7 +25,6 @@ namespace CRLFtoLF_Night
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(ex.Message);
                 Console.ForegroundColor = ConsoleColor.White;
-
             }
         }
         static async void go(string patch, bool SubDirectory, string excude)
@@ -38,21 +37,18 @@ namespace CRLFtoLF_Night
                 if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
                     foreach (string file in dirString(patch, SubDirectory))
                     {
-
                         if (Array.Find(ExcudeNames, element => file.Contains((element))) !=null)
                         {
                             Console.WriteLine("Omitted file: " + file);
                             continue;
                         }
                         Console.WriteLine(file);
-
                         convertLF(file);
                     }
                 else
                 {
                     convertLF(patch);
                 }
-
             }
             catch (Exception ex)
             {
@@ -61,7 +57,6 @@ namespace CRLFtoLF_Night
                 Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
-
             return;
         }
         static void Main(string[] args)
@@ -81,7 +76,6 @@ namespace CRLFtoLF_Night
             if (args.Length == 3)
                 excude = args[2];
             go(args[0], subDir, excude);
-
         }
     }
 }
