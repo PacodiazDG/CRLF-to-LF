@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CRLFtoLF Night": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\example true no"
+    }
+  }
+}
